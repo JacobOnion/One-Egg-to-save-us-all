@@ -18,15 +18,24 @@ public class EggManager : MonoBehaviour
     public GameObject egg;
     private Vector3 newPos;
     private TMP_Text eggUI;
+    private AudioSource _audioSource;
 
     private void Start()
     {
         eggUI = GameObject.FindGameObjectWithTag("egg UI").GetComponent<TMP_Text>();
+        _audioSource = GetComponent<AudioSource>();
         EggCollected();
     }
 
     public void EggCollected()
     {
+        if (eggsCollected >= 0)
+        {
+            float pitch = 90 + (eggsCollected + 1) * 4;
+            pitch /= 100;
+            _audioSource.pitch = pitch;
+            _audioSource.Play();
+        }
         eggsCollected += 1;
         eggUI.text = (eggCount - eggsCollected).ToString();
         if (eggsCollected == eggCount)

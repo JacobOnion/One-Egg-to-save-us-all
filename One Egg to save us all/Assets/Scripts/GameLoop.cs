@@ -11,8 +11,10 @@ public class GameLoop : MonoBehaviour
     private List<GameObject> enemies = new List<GameObject>();
     public GameObject waveCompleteText;
     public GameObject gameCompleteText;
+    private AudioSource _audioSource;
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         Invoke("SpawnWave", 2f);
     }
 
@@ -21,6 +23,7 @@ public class GameLoop : MonoBehaviour
     {
         if (waveComplete)
         {
+            _audioSource.Play();
             waveComplete = false;
             Debug.Log("Wave Complete!");
             waveCompleteText.SetActive(true);
@@ -29,7 +32,6 @@ public class GameLoop : MonoBehaviour
         
         else if (currentWave != null && currentWave.GetComponent<EggManager>().eggsecution)  // All enemies purged in the holy light
         {
-            Debug.Log("AAAGHGHGHGHGAAAH");
             if (waveIndex < waves.Length - 1)
             {
                 waveIndex += 1;
@@ -38,7 +40,7 @@ public class GameLoop : MonoBehaviour
             }
             else
             {
-                Debug.Log("Winner");
+                _audioSource.Play();
                 Destroy(currentWave);
                 gameCompleteText.SetActive(true);
                 Invoke("ReturnToMenu", 4f);

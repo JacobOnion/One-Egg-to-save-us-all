@@ -8,6 +8,9 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] private float iFrames;
 
     public Canvas deathScreen;
+    public ScreenShake _ScreenShake;
+
+    [SerializeField] private float shakeIntensity;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,6 +35,7 @@ public class PlayerDeath : MonoBehaviour
     {
         if ((other.CompareTag("enemy bullet") || other.CompareTag("melee enemy") || other.CompareTag("laser enemy")) && !invincible)
         {
+            _ScreenShake.shake = 0.06f;
             health -= 1;
             invincible = true;
             Invoke("ActivateHitbox", iFrames);

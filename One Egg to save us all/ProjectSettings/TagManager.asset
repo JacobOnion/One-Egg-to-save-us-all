@@ -8,6 +8,7 @@ TagManager:
   - melee enemy
   - laser enemy
   - egg UI
+  - music
   layers:
   - Default
   - TransparentFX

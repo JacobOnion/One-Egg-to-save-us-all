@@ -40,7 +40,10 @@ public class LaserEnemy : TurretEnemy
     }
     void OnDestroy()
     {
-        laserEffect.enabled = false; //If the enemy is dead, the glow effect should turn off as well
+        if (laserEffect != null)
+        {
+            laserEffect.enabled = false; //If the enemy is dead, the glow effect should turn off as well
+        }
     }
 
     void Update()
