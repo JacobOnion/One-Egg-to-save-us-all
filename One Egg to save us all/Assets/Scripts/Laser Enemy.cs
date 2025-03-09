@@ -12,6 +12,7 @@ public class LaserEnemy : TurretEnemy
     private Volume laserEffect;
     public float maxDistance;
     private PlayerDeath playerDeath;
+    private Animator _animator;
 
     public LaserEnemy(float newHealth, float newEnemyDamage, float newFireRate, GameObject[] newGuns) : base(newHealth, newEnemyDamage, newFireRate, newGuns)
     {
@@ -20,6 +21,7 @@ public class LaserEnemy : TurretEnemy
     private void Awake()
     {
         playerDeath = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>();
+        _animator = GetComponent<Animator>();
         laserEffect = Instantiate(volume); //used to add a glow effect to the lasers
         lineRenderers = new List<LineRenderer>();
         volume.enabled = false;
@@ -79,7 +81,9 @@ public class LaserEnemy : TurretEnemy
 
     protected void EnableLaser()
     {
+        Debug.Log("trace on");
         laserEffect.enabled = true;
+        _animator.SetBool("shooting", true);
         Invoke("DisableLaser", 2.2f); //sets the duration of the laser
     }
 
@@ -89,6 +93,7 @@ public class LaserEnemy : TurretEnemy
         {
             laser.enabled = false;
         }
+        _animator.SetBool("shooting", false);
         laserEffect.enabled = false;
     }
 }

@@ -5,9 +5,11 @@ using Vector2 = System.Numerics.Vector2;
 
 public class EggManager : MonoBehaviour
 {
+    [SerializeField] private float upperX;
+    [SerializeField] private float lowerX;
+    [SerializeField] private float upperY;
+    [SerializeField] private float lowerY;
     [SerializeField] private int eggCount;
-    [SerializeField] private Vector2 upper; // top right of level
-    [SerializeField] private Vector2 lower; // bottom left of level
     [SerializeField] private float eggMercy;
     private int eggsCollected = -1;
     public bool eggsecution;
@@ -29,10 +31,10 @@ public class EggManager : MonoBehaviour
         else
         {
             Vector3 lastPos = newPos;
-            newPos = new Vector3(Random.Range(lower.X, upper.X), Random.Range(lower.Y, upper.Y), 0);
+            newPos = new Vector3(Random.Range(lowerX, upperX), Random.Range(lowerY, upperY), 0);
             while ((newPos - lastPos).magnitude < eggMercy)
             {
-                newPos = new Vector3(Random.Range(lower.X, upper.X), Random.Range(lower.Y, upper.Y), 0);
+                newPos = new Vector3(Random.Range(lowerX, upperX), Random.Range(lowerY, upperY), 0);
                 Debug.Log("Regening");
             }
             Instantiate(egg, newPos, Quaternion.identity, this.transform);

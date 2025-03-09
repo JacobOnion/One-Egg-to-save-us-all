@@ -48,9 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf7d14623e74f34cbe0b5a36865276b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eggCount: 4
-  eggMercy: 5
-  eggsecution: 0
+  upperX: 7
+  lowerX: -8
+  upperY: 6
+  lowerY: -8
+  eggCount: 6
+  eggMercy: 0
+  eggsecution: 1
   egg: {fileID: 5189391389153523667, guid: e0817c2d40fdad3459702b56ecae3210, type: 3}
 --- !u!1001 &2251638009543118391
 PrefabInstance:

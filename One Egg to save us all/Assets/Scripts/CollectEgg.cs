@@ -9,8 +9,9 @@ public class CollectEgg : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("HITTTT");
         if (other.gameObject.CompareTag("Player"))
         {
             transform.parent.GetComponent<EggManager>().EggCollected();
