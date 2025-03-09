@@ -46,7 +46,7 @@ public class SniperEnemy : TurretEnemy
         laser.SetPosition(0, gun.transform.position);
         if (Physics2D.Raycast(gun.transform.position, gun.transform.up))
         {
-            RaycastHit2D hit = Physics2D.Raycast(gun.transform.position, gun.transform.up, Mathf.Infinity, ~LayerMask.GetMask("spawns"));
+            RaycastHit2D hit = Physics2D.Raycast(gun.transform.position, gun.transform.up, Mathf.Infinity, LayerMask.GetMask("Geometry", "Player"));
             laser.SetPosition(1, hit.point);
         }
     }
@@ -61,7 +61,7 @@ public class SniperEnemy : TurretEnemy
 
     void ShootGun()
     {
-        RaycastHit2D shot = Physics2D.Raycast(gun.transform.position, gun.transform.up, Mathf.Infinity, ~LayerMask.GetMask("spawns"));
+        RaycastHit2D shot = Physics2D.Raycast(gun.transform.position, gun.transform.up, Mathf.Infinity, LayerMask.GetMask("Geometry", "Player"));
 
         if (shot.transform.gameObject.CompareTag("Player"))
         {

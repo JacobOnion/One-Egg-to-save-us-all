@@ -14,7 +14,7 @@ public class HealthBarManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentHealth != _playerDeath.health)
+        if (currentHealth != _playerDeath.health && currentHealth >= 0)
         {
             Debug.Log("ow!");
             currentHealth = _playerDeath.health;

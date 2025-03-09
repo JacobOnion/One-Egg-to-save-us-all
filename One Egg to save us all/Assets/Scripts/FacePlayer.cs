@@ -18,13 +18,13 @@ public class FacePlayer : MonoBehaviour
     void Update()
     {
         float xPos = player.position.x - self.position.x;
-        if (xPos > 0 && this.gameObject.transform.localScale.x == 1f)
+        if (xPos > 0 && this.gameObject.transform.localScale.x == 1.2f)
         {
-            this.gameObject.transform.localScale = new Vector3(-1, 1, 1);
+            this.gameObject.transform.localScale = new Vector3(-1.2f, 1, 1);
         }
-        else if (xPos < 0 && this.gameObject.transform.localScale.x == -1f)
+        else if (xPos < 0 && this.gameObject.transform.localScale.x == -1.2f)
         {
-            this.gameObject.transform.localScale = new Vector3(1, 1, 1);
+            this.gameObject.transform.localScale = new Vector3(1.2f, 1, 1);
         }
     }
 }

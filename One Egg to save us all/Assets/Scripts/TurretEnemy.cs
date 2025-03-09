@@ -1,3 +1,4 @@
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class TurretEnemy : Enemy
@@ -10,6 +11,7 @@ public class TurretEnemy : Enemy
     public bool animated;
     public Sprite idle;
     public Sprite shooting;
+    public float shootAnimTime;
     public TurretEnemy(float newHealth, float newEnemyDamage, float newFireRate, GameObject[] newGuns) : base(newHealth, newEnemyDamage)
     {
         fireRate = newFireRate;
@@ -29,7 +31,7 @@ public class TurretEnemy : Enemy
         coolDown -= Time.deltaTime;
         if (animated)
         {
-            if (coolDown <= 0.5f)
+            if (coolDown <= shootAnimTime)
             {
                 _spriteRenderer.sprite = shooting;
             }

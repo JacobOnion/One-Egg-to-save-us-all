@@ -176,6 +176,7 @@ MonoBehaviour:
   animated: 1
   idle: {fileID: -19394523932937, guid: 7ba1e83e81253624b92c5e5a25aa1441, type: 3}
   shooting: {fileID: -441160339, guid: 7ba1e83e81253624b92c5e5a25aa1441, type: 3}
+  shootAnimTime: 0.5
   enemyBulletForce: 3
   enemyBullet: {fileID: 7562377453594519661, guid: 0a673d0af816c3c4bae0bfd0f4a56048, type: 3}
 --- !u!256 &6787806205612352137

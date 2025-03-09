@@ -45,4 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
+  - {fileID: 3375971498468263356, guid: b73d312786f98534586ef7db7dbfea7b, type: 3}
   - {fileID: 9158926445136958699, guid: 2689ad366e5b1e547a1b4b4357ecefbb, type: 3}
+  - {fileID: 6903539026213642969, guid: 2e5525b8ea5a1f54dad5abf7e08b9547, type: 3}
+  - {fileID: 4220461803828715143, guid: 1aa875fddfa098844bdcc9d93a63d9a3, type: 3}
+  - {fileID: 4381871965511717659, guid: 100b0e6a05349784a9d369b2951f68d8, type: 3}
+  waveCompleteText: {fileID: 0}
+  gameCompleteText: {fileID: 0}

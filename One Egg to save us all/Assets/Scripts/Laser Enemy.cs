@@ -56,11 +56,12 @@ public class LaserEnemy : TurretEnemy
             for (int i = 0; i < guns.Length; i++)
             {
                 lineRenderers[i].enabled = true;
-                if (Physics2D.Raycast(guns[i].transform.position, guns[i].transform.up)) //if the raycast hits something, draw the laser at that length
+                if (Physics2D.Raycast(guns[i].transform.position, guns[i].transform.up, Mathf.Infinity, LayerMask.GetMask("Geometry"))) //if the raycast hits something, draw the laser at that length
                 {
-                    RaycastHit2D hit = Physics2D.Raycast(guns[i].transform.position, guns[i].transform.up, Mathf.Infinity, ~LayerMask.GetMask("spawns")); //LayerMask used so the raycast doesnt collide with the door or enemy spawner colliders
+                    RaycastHit2D hit = Physics2D.Raycast(guns[i].transform.position, guns[i].transform.up, Mathf.Infinity, LayerMask.GetMask("Geometry"));
+                    RaycastHit2D playerCheck = Physics2D.Raycast(guns[i].transform.position, guns[i].transform.up, Mathf.Infinity, LayerMask.GetMask("Player", "Geometry"));
                     DrawRay(guns[i].transform.position, hit.point, i);
-                    if (hit.transform.gameObject.CompareTag("Player"))
+                    if (playerCheck.transform.gameObject.CompareTag("Player"))
                     {
                         playerDeath.DamagePlayer(gameObject);
                     }
