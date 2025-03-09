@@ -1,6 +1,4 @@
 using UnityEngine;
-using Vector2 = System.Numerics.Vector2;
-
 public class FacePlayer : MonoBehaviour
 {
     private Rigidbody2D player;
