@@ -29,8 +29,12 @@ public class EggManager : MonoBehaviour
         else
         {
             Vector3 lastPos = newPos;
+            newPos = new Vector3(Random.Range(lower.X, upper.X), Random.Range(lower.Y, upper.Y), 0);
             while ((newPos - lastPos).magnitude < eggMercy)
+            {
                 newPos = new Vector3(Random.Range(lower.X, upper.X), Random.Range(lower.Y, upper.Y), 0);
+                Debug.Log("Regening");
+            }
             Instantiate(egg, newPos, Quaternion.identity, this.transform);
         }
     }
