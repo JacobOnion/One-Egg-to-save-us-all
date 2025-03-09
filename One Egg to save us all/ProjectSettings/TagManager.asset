@@ -52,5 +52,8 @@ TagManager:
   - name: UI
     uniqueID: 3224263391
     locked: 0
+  - name: EGG
+    uniqueID: 43812677
+    locked: 0
   m_RenderingLayers:
   - Default

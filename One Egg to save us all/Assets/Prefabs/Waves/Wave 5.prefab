@@ -57,7 +57,7 @@ MonoBehaviour:
   upperY: 6
   lowerY: -8
   eggCount: 6
-  eggMercy: 0
+  eggMercy: 5
   eggsecution: 0
   egg: {fileID: 5189391389153523667, guid: e0817c2d40fdad3459702b56ecae3210, type: 3}
 --- !u!82 &3701719627026597839
@@ -349,6 +349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret Enemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6978129584374345034, guid: 95c5253307c4873418d3ecf0bd95679b, type: 3}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -481,6 +485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6978129584374345034, guid: 95c5253307c4873418d3ecf0bd95679b, type: 3}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -543,6 +551,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6978129584374345034, guid: 95c5253307c4873418d3ecf0bd95679b, type: 3}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -604,6 +616,10 @@ PrefabInstance:
     - target: {fileID: 5968441630186342662, guid: 95c5253307c4873418d3ecf0bd95679b, type: 3}
       propertyPath: m_Name
       value: Turret Enemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978129584374345034, guid: 95c5253307c4873418d3ecf0bd95679b, type: 3}
+      propertyPath: fireRate
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -11,10 +11,12 @@ public class PlayerDeath : MonoBehaviour
     public ScreenShake _ScreenShake;
 
     [SerializeField] private float shakeIntensity;
+
+    private AudioSource _audioSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class PlayerDeath : MonoBehaviour
     {
         if ((other.CompareTag("enemy bullet") || other.CompareTag("melee enemy") || other.CompareTag("laser enemy")) && !invincible)
         {
+            _audioSource.Play();
             _ScreenShake.shake = 0.06f;
             health -= 1;
             invincible = true;

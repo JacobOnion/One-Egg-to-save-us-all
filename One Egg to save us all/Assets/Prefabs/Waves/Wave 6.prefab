@@ -57,7 +57,7 @@ MonoBehaviour:
   upperY: 6
   lowerY: -8
   eggCount: 6
-  eggMercy: 0
+  eggMercy: 5
   eggsecution: 0
   egg: {fileID: 5189391389153523667, guid: e0817c2d40fdad3459702b56ecae3210, type: 3}
 --- !u!82 &7825535142176408625
