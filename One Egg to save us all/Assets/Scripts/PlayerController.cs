@@ -7,14 +7,33 @@ public class PlayerController : MonoBehaviour
     public float accelRate;
     public float deccelRate;
     private Rigidbody2D rb;
+    private Animator _animator;
     void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        _animator = gameObject.GetComponent<Animator>();
     }
 
     private void Update()
     {
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized; //takes in the direction the player wants to move in
+        if (input.magnitude > 0.1f)
+        {
+            _animator.SetBool("Moving", true);
+        }
+        else
+        {
+            _animator.SetBool("Moving", false);
+        }
+
+        if (transform.localScale.x == 1 && input.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (transform.localScale.x == -1 && input.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     void FixedUpdate()

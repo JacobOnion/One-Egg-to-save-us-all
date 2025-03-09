@@ -30,7 +30,6 @@ public class PistolEnemy : TurretEnemy
     {
         for (int i = 0; i < guns.Length; i++)
         {
-            Debug.Log("shoot");
             GameObject currentBullet = Instantiate(enemyBullet, guns[i].transform.position, guns[i].transform.rotation); //creates new bullet
             currentBullet.GetComponent<EnemyDestroyBullet>().damage = enemyDamage;
             currentBullet.GetComponent<Rigidbody2D>().AddForce((guns[i].transform.up) * enemyBulletForce, ForceMode2D.Impulse); //applies a forward impulse to the bullet
