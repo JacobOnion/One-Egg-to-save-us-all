@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
-    public float health;
+    public int health;
+    private bool invincible;
+    [SerializeField] private float iFrames;
 
     public Canvas deathScreen;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,14 +30,17 @@ public class PlayerDeath : MonoBehaviour
     
     public void DamagePlayer(GameObject other)
     {
-        if (other.CompareTag("enemy bullet"))
+        if ((other.CompareTag("enemy bullet") || other.CompareTag("melee enemy") || other.CompareTag("laser enemy")) && !invincible)
         {
-            health -= other.GetComponent<EnemyDestroyBullet>().damage; //Gets the damage value from the enemy class and subtracts that from health
+            health -= 1;
+            invincible = true;
+            Invoke("ActivateHitbox", iFrames);
         }
-        else if (other.CompareTag("melee enemy") || other.CompareTag("laser enemy"))
-        {
-            health -= other.GetComponent<Enemy>().enemyDamage;
-        }
+    }
+
+    private void ActivateHitbox()
+    {
+        invincible = false;
     }
     
     private void Death()
